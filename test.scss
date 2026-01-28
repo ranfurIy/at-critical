@@ -1,0 +1,26 @@
+// Test @critical syntax in SCSS
+@critical critical.css {
+  .hero {
+    background-color: #fff;
+    padding: 2rem;
+  }
+}
+
+@critical homepage.css {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+}
+
+// Regular SCSS should still work normally
+.component {
+  @include mixin-name;
+
+  &:hover {
+    color: blue;
+  }
+}

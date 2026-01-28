@@ -1,0 +1,68 @@
+{
+  "name": "at-critical",
+  "publisher": "Ranfurly",
+  "displayName": "at-critical",
+  "description": "Injects @critical syntax support for SCSS, highlighting and suppressing errors for custom blocks.",
+  "version": "0.0.1",
+  "icon": "images/spellicon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meteora-digital/at-critical"
+  },
+  "engines": {
+    "vscode": "^1.108.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:scss"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "scopeName": "at-critical.injection.scss",
+        "path": "./syntaxes/critical-injection.json",
+        "injectTo": ["source.css.scss"]
+      }
+    ],
+    "css": {
+      "customData": ["./data/css-critical.json"]
+    },
+    "configuration": {
+      "title": "@critical Configuration",
+      "properties": {
+        "at-critical.enableValidation": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable @critical at-rule validation support"
+        },
+        "at-critical.suppressWarnings": {
+          "type": "boolean",
+          "default": true,
+          "description": "Suppress 'unknown at-rule' warnings for @critical"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.108.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  }
+}

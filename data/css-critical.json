@@ -1,0 +1,15 @@
+{
+  "version": 1.1,
+  "atDirectives": [
+    {
+      "name": "@critical",
+      "description": "Defines critical CSS that should be extracted into a separate file during compilation",
+      "references": [
+        {
+          "name": "Critical CSS Documentation",
+          "url": "https://github.com/meteora-digital/at-critical"
+        }
+      ]
+    }
+  ]
+}
