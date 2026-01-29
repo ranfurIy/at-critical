@@ -7,7 +7,7 @@
   "icon": "images/spellicon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/meteora-digital/at-critical"
+    "url": "https://github.com/ranfurIy/at-critical"
   },
   "engines": {
     "vscode": "^1.108.0"
@@ -29,21 +29,6 @@
     ],
     "css": {
       "customData": ["./data/css-critical.json"]
-    },
-    "configuration": {
-      "title": "@critical Configuration",
-      "properties": {
-        "at-critical.enableValidation": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable @critical at-rule validation support"
-        },
-        "at-critical.suppressWarnings": {
-          "type": "boolean",
-          "default": true,
-          "description": "Suppress 'unknown at-rule' warnings for @critical"
-        }
-      }
     }
   },
   "scripts": {
